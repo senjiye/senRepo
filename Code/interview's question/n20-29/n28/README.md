@@ -1,24 +1,15 @@
-This problem was recently asked by Google.
+This problem was asked by Palantir.
 
-Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+Write an algorithm to justify text. Given a sequence of words and an integer line length k, return a list of strings which represents each line, fully justified.
 
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+More specifically, you should have as many words as possible in each line. There should be at least one space between each word. Pad extra spaces when necessary so that each line has exactly length k. Spaces should be distributed as equally as possible, with the extra spaces, if any, distributed starting from the left.
 
-Bonus: Can you do this in one pass?
+If you can only fit one word on a line, then you should pad the right-hand side with spaces.
 
+Each word is guaranteed not to be longer than k.
 
-```java
-public static boolean containsPairWithSum(int[] a, int x) {
-    Arrays.sort(a);
-    for (int i = 0, j = a.length - 1; i < j;) {
-        int sum = a[i] + a[j];
-        if (sum < x)
-            i++;
-        else if (sum > x)
-            j--;
-        else
-            return true;
-    }
-    return false;
-}
-```
+For example, given the list of words ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"] and k = 16, you should return the following:
+
+["the  quick brown", # 1 extra space on the left
+"fox  jumps  over", # 2 extra spaces distributed evenly
+"the   lazy   dog"] # 4 extra spaces distributed evenly

@@ -1,24 +1,11 @@
-This problem was recently asked by Google.
+This problem was asked by Facebook.
 
-Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+Implement regular expression matching with the following special characters:
 
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+. (period) which matches any single character
+* (asterisk) which matches zero or more of the preceding element
+That is, implement a function that takes in a string and a valid regular expression and returns whether or not the string matches the regular expression.
 
-Bonus: Can you do this in one pass?
+For example, given the regular expression "ra." and the string "ray", your function should return true. The same regular expression on the string "raymond" should return false.
 
-
-```java
-public static boolean containsPairWithSum(int[] a, int x) {
-    Arrays.sort(a);
-    for (int i = 0, j = a.length - 1; i < j;) {
-        int sum = a[i] + a[j];
-        if (sum < x)
-            i++;
-        else if (sum > x)
-            j--;
-        else
-            return true;
-    }
-    return false;
-}
-```
+Given the regular expression ".*at" and the string "chat", your function should return true. The same regular expression on the string "chats" should return false.

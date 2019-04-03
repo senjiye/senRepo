@@ -1,24 +1,5 @@
-This problem was recently asked by Google.
+This problem was asked by Facebook.
 
-Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+A builder is looking to build a row of N houses that can be of K different colors. He has a goal of minimizing cost while ensuring that no two neighboring houses are of the same color.
 
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
-
-Bonus: Can you do this in one pass?
-
-
-```java
-public static boolean containsPairWithSum(int[] a, int x) {
-    Arrays.sort(a);
-    for (int i = 0, j = a.length - 1; i < j;) {
-        int sum = a[i] + a[j];
-        if (sum < x)
-            i++;
-        else if (sum > x)
-            j--;
-        else
-            return true;
-    }
-    return false;
-}
-```
+Given an N by K matrix where the nth row and kth column represents the cost to build the nth house with kth color, return the minimum cost which achieves this goal.

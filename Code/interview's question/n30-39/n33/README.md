@@ -1,24 +1,15 @@
-This problem was recently asked by Google.
+This problem was asked by Microsoft.
 
-Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+Compute the running median of a sequence of numbers. That is, given a stream of numbers, print out the median of the list so far on each new element.
 
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+Recall that the median of an even-numbered list is the average of the two middle numbers.
 
-Bonus: Can you do this in one pass?
+For example, given the sequence [2, 1, 5, 7, 2, 0, 5], your algorithm should print out:
 
-
-```java
-public static boolean containsPairWithSum(int[] a, int x) {
-    Arrays.sort(a);
-    for (int i = 0, j = a.length - 1; i < j;) {
-        int sum = a[i] + a[j];
-        if (sum < x)
-            i++;
-        else if (sum > x)
-            j--;
-        else
-            return true;
-    }
-    return false;
-}
-```
+2
+1.5
+2
+3.5
+2
+2
+2

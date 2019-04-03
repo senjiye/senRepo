@@ -1,24 +1,7 @@
-This problem was recently asked by Google.
+This problem was asked by Google.
 
-Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+Given an array of strictly the characters 'R', 'G', and 'B', segregate the values of the array so that all the Rs come first, the Gs come second, and the Bs come last. You can only swap elements of the array.
 
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+Do this in linear time and in-place.
 
-Bonus: Can you do this in one pass?
-
-
-```java
-public static boolean containsPairWithSum(int[] a, int x) {
-    Arrays.sort(a);
-    for (int i = 0, j = a.length - 1; i < j;) {
-        int sum = a[i] + a[j];
-        if (sum < x)
-            i++;
-        else if (sum > x)
-            j--;
-        else
-            return true;
-    }
-    return false;
-}
-```
+For example, given the array ['G', 'B', 'R', 'R', 'B', 'R', 'G'], it should become ['R', 'R', 'R', 'G', 'G', 'B', 'B'].

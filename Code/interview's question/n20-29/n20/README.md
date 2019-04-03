@@ -1,24 +1,9 @@
-This problem was recently asked by Google.
+This problem was asked by Google.
 
-Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+Given two singly linked lists that intersect at some point, find the intersecting node. The lists are non-cyclical.
 
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+For example, given A = 3 -> 7 -> 8 -> 10 and B = 99 -> 1 -> 8 -> 10, return the node with value 8.
 
-Bonus: Can you do this in one pass?
+In this example, assume nodes with the same value are the exact same node objects.
 
-
-```java
-public static boolean containsPairWithSum(int[] a, int x) {
-    Arrays.sort(a);
-    for (int i = 0, j = a.length - 1; i < j;) {
-        int sum = a[i] + a[j];
-        if (sum < x)
-            i++;
-        else if (sum > x)
-            j--;
-        else
-            return true;
-    }
-    return false;
-}
-```
+Do this in O(M + N) time (where M and N are the lengths of the lists) and constant space.

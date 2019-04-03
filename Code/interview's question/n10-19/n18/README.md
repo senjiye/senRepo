@@ -1,24 +1,11 @@
-This problem was recently asked by Google.
+This problem was asked by Google.
 
-Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+Given an array of integers and a number k, where 1 <= k <= length of the array, compute the maximum values of each subarray of length k.
 
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+For example, given array = [10, 5, 2, 7, 8, 7] and k = 3, we should get: [10, 7, 8, 8], since:
 
-Bonus: Can you do this in one pass?
-
-
-```java
-public static boolean containsPairWithSum(int[] a, int x) {
-    Arrays.sort(a);
-    for (int i = 0, j = a.length - 1; i < j;) {
-        int sum = a[i] + a[j];
-        if (sum < x)
-            i++;
-        else if (sum > x)
-            j--;
-        else
-            return true;
-    }
-    return false;
-}
-```
+10 = max(10, 5, 2)
+7 = max(5, 2, 7)
+8 = max(2, 7, 8)
+8 = max(7, 8, 7)
+Do this in O(n) time and O(k) space. You can modify the input array in-place and you do not need to store the results. You can simply print them out as you compute them.
